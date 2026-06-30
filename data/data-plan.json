@@ -1,0 +1,14 @@
+[
+  {
+    "sobject": "Log__c",
+    "files": ["logs.json"]
+  },
+  {
+    "sobject": "Installation__c",
+    "files": ["installations.json"]
+  },
+  {
+    "sobject": "Field_Route__c",
+    "files": ["routes.json"]
+  }
+]

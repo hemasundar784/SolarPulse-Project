@@ -1,0 +1,28 @@
+{
+  "records": [
+    {
+      "attributes": {"type": "Log__c", "referenceId": "LogRef1"},
+      "Source__c": "IntegrationService",
+      "Context__c": "Inverter API Sync",
+      "Level__c": "ERROR",
+      "Message__c": "Timeout connecting to solar edge cloud management API server interface.",
+      "Timestamp__c": "2026-07-01T10:00:00.000+0000"
+    },
+    {
+      "attributes": {"type": "Log__c", "referenceId": "LogRef2"},
+      "Source__c": "InvoiceProcessorBatch",
+      "Context__c": "Nightly Automation Run",
+      "Level__c": "WARN",
+      "Message__c": "CPU timeout warning threshold breached during high volume contract evaluation.",
+      "Timestamp__c": "2026-07-01T10:15:00.000+0000"
+    },
+    {
+      "attributes": {"type": "Log__c", "referenceId": "LogRef3"},
+      "Source__c": "BeforeSaveInstallation",
+      "Context__c": "Trigger Context Validation",
+      "Level__c": "INFO",
+      "Message__c": "System initialized panel array telemetry configurations cleanly.",
+      "Timestamp__c": "2026-07-01T10:30:00.000+0000"
+    }
+  ]
+}

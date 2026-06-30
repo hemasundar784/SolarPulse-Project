@@ -1,0 +1,34 @@
+{
+  "records": [
+    {
+      "attributes": {"type": "Installation__c", "referenceId": "InstRef1"},
+      "Status__c": "In Progress",
+      "Region__c": "West",
+      "Scheduled_Date__c": "2026-07-01",
+      "Deadline_Date__c": "2026-07-15",
+      "Panel_Count__c": 24,
+      "Contract_Value__c": 15450.00,
+      "Alert_Flag__c": false
+    },
+    {
+      "attributes": {"type": "Installation__c", "referenceId": "InstRef2"},
+      "Status__c": "Pending",
+      "Region__c": "North",
+      "Scheduled_Date__c": "2026-07-07",
+      "Deadline_Date__c": "2026-07-31",
+      "Panel_Count__c": 48,
+      "Contract_Value__c": 32000.00,
+      "Alert_Flag__c": false
+    },
+    {
+      "attributes": {"type": "Installation__c", "referenceId": "InstRef3"},
+      "Status__c": "Completed",
+      "Region__c": "South",
+      "Scheduled_Date__c": "2026-06-15",
+      "Deadline_Date__c": "2026-06-28",
+      "Panel_Count__c": 14,
+      "Contract_Value__c": 9200.00,
+      "Alert_Flag__c": false
+    }
+  ]
+}

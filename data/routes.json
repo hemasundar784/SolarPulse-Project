@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "attributes": {"type": "Field_Route__c", "referenceId": "RouteRef1"},
+      "Installation__c": "@InstRef1",
+      "Route_Date__c": "2026-07-02T09:00:00.000+0000",
+      "Route_Status__c": "Dispatched",
+      "GPS_Coordinates__Latitude__s": 37.7749,
+      "GPS_Coordinates__Longitude__s": -122.4194,
+      "Duration_Hours__c": 3.5,
+      "Completion_Notes__c": "Initial structural site mounting analysis and framing confirmation window."
+    },
+    {
+      "attributes": {"type": "Field_Route__c", "referenceId": "RouteRef2"},
+      "Installation__c": "@InstRef2",
+      "Route_Date__c": "2026-07-08T09:00:00.000+0000",
+      "Route_Status__c": "Open",
+      "GPS_Coordinates__Latitude__s": 34.0522,
+      "GPS_Coordinates__Longitude__s": -118.2437
+    },
+    {
+      "attributes": {"type": "Field_Route__c", "referenceId": "RouteRef3"},
+      "Installation__c": "@InstRef3",
+      "Route_Date__c": "2026-06-20T09:00:00.000+0000",
+      "Route_Status__c": "Completed",
+      "GPS_Coordinates__Latitude__s": 40.7128,
+      "GPS_Coordinates__Longitude__s": -74.0060,
+      "Duration_Hours__c": 4.25,
+      "Completion_Notes__c": "Micro-inverter array completely synchronized to sub-panel. Grounding rod inspection approved."
+    }
+  ]
+}
