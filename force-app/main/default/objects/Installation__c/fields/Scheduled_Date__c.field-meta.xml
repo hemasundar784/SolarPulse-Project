@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://sforce.com">
+    <fullName>Scheduled_Date__c</fullName>
+    <label>Scheduled Date</label>
+    <type>Date</type>
+    <required>true</required>
+</CustomField>

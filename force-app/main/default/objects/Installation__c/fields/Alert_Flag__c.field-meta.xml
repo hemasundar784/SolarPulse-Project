@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://sforce.com">
+    <fullName>Alert_Flag__c</fullName>
+    <label>Alert Flag</label>
+    <type>Checkbox</type>
+    <defaultValue>false</defaultValue>
+</CustomField>

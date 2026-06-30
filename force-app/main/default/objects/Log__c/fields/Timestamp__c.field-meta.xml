@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://sforce.com">
+    <fullName>Timestamp__c</fullName>
+    <label>Timestamp</label>
+    <type>DateTime</type>
+    <required>true</required>
+</CustomField>

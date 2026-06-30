@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://sforce.com">
+    <fullName>Region__c</fullName>
+    <label>Region</label>
+    <type>Picklist</type>
+    <required>false</required>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>North</fullName><default>false</default></value>
+            <value><fullName>South</fullName><default>false</default></value>
+            <value><fullName>East</fullName><default>false</default></value>
+            <value><fullName>West</fullName><default>false</default></value>
+            <value><fullName>Central</fullName><default>false</default></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

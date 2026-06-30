@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://sforce.com">
+    <fullName>Assigned_Manager__c</fullName>
+    <label>Assigned Manager</label>
+    <type>Lookup</type>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Managed_Installations</relationshipName>
+    <required>false</required>
+</CustomField>

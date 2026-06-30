@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://sforce.com">
+    <fullName>Level__c</fullName>
+    <label>Level</label>
+    <type>Picklist</type>
+    <required>true</required>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>ERROR</fullName><default>true</default></value>
+            <value><fullName>WARN</fullName><default>false</default></value>
+            <value><fullName>INFO</fullName><default>false</default></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

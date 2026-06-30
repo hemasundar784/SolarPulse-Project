@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://sforce.com">
+    <fullName>Technician__c</fullName>
+    <label>Technician</label>
+    <type>Lookup</type>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Field_Routes</relationshipName>
+    <required>false</required>
+</CustomField>

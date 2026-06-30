@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://sforce.com">
+    <fullName>GPS_Coordinates__c</fullName>
+    <label>GPS Coordinates</label>
+    <type>Location</type>
+    <displayLocationInDecimal>true</displayLocationInDecimal>
+    <scale>7</scale>
+    <required>false</required>
+</CustomField>
