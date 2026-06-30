@@ -2,6 +2,8 @@
   "records": [
     {
       "attributes": {"type": "Installation__c", "referenceId": "InstRef1"},
+      "Account__c": "001d200000UJujZAAT", 
+      "Assigned_Manager__c": "005d2000007QLpaAAG",
       "Status__c": "In Progress",
       "Region__c": "West",
       "Scheduled_Date__c": "2026-07-01",
@@ -12,6 +14,8 @@
     },
     {
       "attributes": {"type": "Installation__c", "referenceId": "InstRef2"},
+      "Account__c": "001d200000UJujZAAT",
+      "Assigned_Manager__c": "005d2000007QLpaAAG",
       "Status__c": "Pending",
       "Region__c": "North",
       "Scheduled_Date__c": "2026-07-07",
@@ -22,6 +26,8 @@
     },
     {
       "attributes": {"type": "Installation__c", "referenceId": "InstRef3"},
+      "Account__c": "001d200000UJujZAAT",
+      "Assigned_Manager__c": "005d2000007QLpaAAG",
       "Status__c": "Completed",
       "Region__c": "South",
       "Scheduled_Date__c": "2026-06-15",
