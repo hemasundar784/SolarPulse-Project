@@ -1,36 +1,59 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>Installation__c</members>
+        <members>Field_Route__c</members>
+        <members>Log__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>ErrorHandler</members>
+        <members>NotificationService</members>
+        <members>InstallationController</members>
+        <members>InstallationTriggerHandler</members>
+        <members>LogisticsCalloutService</members>
+        <members>LogisticsQueueable</members>
+        <members>InstallationMaintenanceBatch</members>
+        <members>InstallationBatchScheduler</members>
+        <members>FieldTelemetryService</members>
+        <members>InstallationAgentActions</members>
+        <members>MockLogisticsCallout</members>
+        <members>TestDataFactory</members>
+        <members>InstallationTriggerTest</members>
+        <members>InstallationBatchTest</members>
+        <members>FieldTelemetryServiceTest</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexComponent</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexPage</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>InstallationTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>installationDashboard</members>
+        <members>routeStatusPanel</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
-        <members>*</members>
-        <name>StaticResource</name>
+        <members>InstallationUpdate__c</members>
+        <name>LightningMessageChannel</name>
     </types>
-    <version>67.0</version>
+    <types>
+        <members>RTF_Installation_BeforeSave_StatusSync</members>
+        <members>RTF_Opportunity_AfterSave_CreateInstallation</members>
+        <members>SF_NotificationRouter</members>
+        <members>SCH_FieldRoute_NightlyCleanup</members>
+        <members>Installation_Scheduling_Wizard</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>ShipMatrix_NC</members>
+        <name>NamedCredential</name>
+    </types>
+    <types>
+        <members>PS_API_Integration_Access</members>
+        <members>PS_Agentforce_Agent</members>
+        <members>PS_Batch_Admin</members>
+        <name>PermissionSet</name>
+     </types>
+    <version>62.0</version>
 </Package>

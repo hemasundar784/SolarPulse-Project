@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Past_Deadline</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  NOT(ISNEW()),
+  ISCHANGED(Deadline_Date__c),
+  Deadline_Date__c &lt; TODAY()
+)</errorConditionFormula>
+    <errorDisplayField>Deadline_Date__c</errorDisplayField>
+    <errorMessage>Deadline Date cannot be set to a past date. Please select a future date.</errorMessage>
+</ValidationRule>

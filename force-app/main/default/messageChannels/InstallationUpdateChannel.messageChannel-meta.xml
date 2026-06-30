@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>InstallationUpdate</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Cross-component messaging for route status updates</description>
+    <lightningMessageFields>
+        <fieldName>routeId</fieldName>
+        <description>ID of the updated Field Route</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>newStatus</fieldName>
+        <description>New route status value</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

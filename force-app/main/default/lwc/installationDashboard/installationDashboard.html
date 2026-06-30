@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Installation Dashboard" icon-name="custom:custom41">
+        <div class="slds-p-around_medium">
+            <template if:true={record.data}>
+                <p>
+                    <strong>Installation:</strong> {installationName}
+                    &nbsp;|&nbsp;
+                    <strong>Status:</strong> {installationStatus}
+                </p>
+                <c-route-status-panel
+                    record-id={recordId}
+                    installation-name={installationName}
+                    onrouteupdated={handleRouteUpdated}
+                ></c-route-status-panel>
+            </template>
+            <template if:true={record.error}>
+                <p class="slds-text-color_error">Error loading record.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

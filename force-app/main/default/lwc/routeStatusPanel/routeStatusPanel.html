@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Field Routes" icon-name="standard:location">
+        <div class="slds-p-around_small">
+            <p><strong>Installation:</strong> {installationName}</p>
+            <template if:true={routes}>
+                <template for:each={routes} for:item="route">
+                    <div key={route.Id} class="slds-box slds-m-bottom_x-small slds-p
+around_small">
+                        <p><strong>{route.Name}</strong> &mdash; {route.Route_Status__c}</p>
+                        <lightning-button label="Mark Dispatched" variant="brand"
+                            data-id={route.Id} onclick={handleDispatch}>
+                        </lightning-button>
+                    </div>
+                </template>
+            </template>
+            <template if:false={routes}>
+                <p class="slds-text-color_weak">No field routes found.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
