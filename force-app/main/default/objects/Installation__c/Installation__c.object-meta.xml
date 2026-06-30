@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://sforce.com">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <label>Installation</label>
+    <pluralLabel>Installations</pluralLabel>
+    <nameField>
+        <displayFormat>INST-{0000}</displayFormat>
+        <label>Installation Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

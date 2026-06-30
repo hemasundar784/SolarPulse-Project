@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://sforce.com">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <label>Field Route</label>
+    <pluralLabel>Field Routes</pluralLabel>
+    <nameField>
+        <displayFormat>RT-{0000}</displayFormat>
+        <label>Route Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

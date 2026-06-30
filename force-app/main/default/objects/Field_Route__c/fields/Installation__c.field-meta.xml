@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://sforce.com">
+    <fullName>Installation__c</fullName>
+    <label>Installation</label>
+    <type>MasterDetail</type>
+    <referenceTo>Installation__c</referenceTo>
+    <relationshipName>Field_Routes</relationshipName>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>
