@@ -9,4 +9,5 @@
         <targetConfig targets="lightning__RecordPage">
             <objects><object>Field_Route__c</object></objects>
         </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
