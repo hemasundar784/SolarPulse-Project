@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solar_Panel_Model__c</fullName>
+    <label>Solar Panel Model</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N-Type TOPCon &amp; Premium Models</fullName>
+                <default>false</default>
+                <label>N-Type TOPCon &amp; Premium Models</label>
+            </value>
+            <value>
+                <fullName>Monocrystalline &amp; Mono-PERC Models</fullName>
+                <default>false</default>
+                <label>Monocrystalline &amp; Mono-PERC Models</label>
+            </value>
+            <value>
+                <fullName>Polycrystalline Models (Budget Tier)</fullName>
+                <default>false</default>
+                <label>Polycrystalline Models (Budget Tier)</label>
+            </value>
+            <value>
+                <fullName>Maxeon 6 AC (440W N-Type)</fullName>
+                <default>false</default>
+                <label>Maxeon 6 AC (440W N-Type)</label>
+            </value>
+            <value>
+                <fullName>REC Alpha Pure-R 430W (Heterojunction)</fullName>
+                <default>false</default>
+                <label>REC Alpha Pure-R 430W (Heterojunction)</label>
+            </value>
+            <value>
+                <fullName>Q Cells Q. TRON BLK M-G2+ 440W (TOPCon)</fullName>
+                <default>false</default>
+                <label>Q Cells Q. TRON BLK M-G2+ 440W (TOPCon)</label>
+            </value>
+            <value>
+                <fullName>JinkoSolar Tiger Neo N-type 575W</fullName>
+                <default>false</default>
+                <label>JinkoSolar Tiger Neo N-type 575W</label>
+            </value>
+            <value>
+                <fullName>Canadian Solar HiKu7 Mono PERC 650W</fullName>
+                <default>false</default>
+                <label>Canadian Solar HiKu7 Mono PERC 650W</label>
+            </value>
+            <value>
+                <fullName>LONGi Hi-MO 6 Scientist 445W Trina Solar Vertex S+ 435W (Dual-Glass)</fullName>
+                <default>false</default>
+                <label>LONGi Hi-MO 6 Scientist 445W Trina Solar Vertex S+ 435W (Dual-Glass)</label>
+            </value>
+            <value>
+                <fullName>JA Solar DeepBlue 3.0 Mono 550W</fullName>
+                <default>false</default>
+                <label>JA Solar DeepBlue 3.0 Mono 550W</label>
+            </value>
+            <value>
+                <fullName>Panasonic EverVolt H Series 410W</fullName>
+                <default>false</default>
+                <label>Panasonic EverVolt H Series 410W</label>
+            </value>
+            <value>
+                <fullName>Waaree Bi.N-08 Bifacial 580W</fullName>
+                <default>false</default>
+                <label>Waaree Bi.N-08 Bifacial 580W</label>
+            </value>
+            <value>
+                <fullName>Loom Solar SHARK 440W Mono-PERC</fullName>
+                <default>false</default>
+                <label>Loom Solar SHARK 440W Mono-PERC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
