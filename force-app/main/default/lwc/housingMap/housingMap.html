@@ -1,0 +1,10 @@
+<template >
+    <lightning-card title="Account Locations">
+        <template if:true={mapMarkers}>
+            <lightning-map map-markers={mapMarkers} zoom-level="5" style="height:500px;"></lightning-map>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </lightning-card>
+</template>

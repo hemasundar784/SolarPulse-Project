@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #4A90E2, #9013FE);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #2d3748;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #4a5568;
+    }
+
+    input[type="text"], 
+    select, 
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e0;
+      font-size: 14px;
+      color: #2d3748;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="text"]:focus, 
+    select:focus, 
+    textarea:focus {
+      border-color: #4A90E2;
+      box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    .grid-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .grid-row .form-group {
+      flex: 1;
+    }
+
+    .coord-wrapper {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-geo {
+      background: #f0f4f8;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      padding: 0 14px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .btn-geo:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #4A90E2, #9013FE);
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.92;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Register</h2>
+  
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dd200000CP1LP" method="POST">
+    <!-- Salesforce Hidden Inputs -->
+    <input type="hidden" name="oid" value="00Dd200000CP1LP">
+    <input type="hidden" name="retURL" value="http://www.google.com">
+    <input type="hidden" id="lead_source" name="lead_source" value="Web">
+
+    <div class="grid-row">
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input id="first_name" name="first_name" maxlength="40" type="text" placeholder="John">
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input id="last_name" name="last_name" maxlength="80" type="text" placeholder="Doe" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" name="email" maxlength="80" type="text" placeholder="john.doe@example.com">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" maxlength="40" type="text" placeholder="(123) 456-7890">
+    </div>
+
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input id="company" name="company" maxlength="40" type="text" placeholder="if customer write customer" required>
+    </div>
+
+    <div class="grid-row">
+      <div class="form-group">
+        <label for="city">City</label>
+        <input id="city" name="city" maxlength="40" type="text">
+      </div>
+      <div class="form-group">
+        <label for="state">State/Province</label>
+        <input id="state" name="state" maxlength="20" type="text">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Coordinates</label>
+      <div class="coord-wrapper">
+        Coordinates (Latitude):<input  id="latitudeBottom" name="0BCd2000000Suld" size="20" type="text" /><br>
+        Coordinates (Longitude):<input  id="longitudeBottom" name="0BCd2000000Sule" size="20" type="text" /><br>
+        <button type="button" class="btn-geo" onclick="getLocation()" title="Get Location">📍</button>
+        
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="form-group">
+        <label for="salutation">Salutation</label>
+        <select id="salutation" name="salutation">
+          <option value="">--None--</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Ms.">Ms.</option>
+          <option value="Mrs.">Mrs.</option>
+          <option value="Dr.">Dr.</option>
+          <option value="Prof.">Prof.</option>
+          <option value="Mx.">Mx.</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip Code</label>
+        <input id="zip" name="zip" maxlength="20" type="text">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="street">Street</label>
+      <textarea id="street" name="street"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description"></textarea>
+    </div>
+
+    <input type="submit" name="submit" value="Submit Registration" class="btn-submit">
+  </form>
+</div>
+
+<script>
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+          document.getElementById('latitudeBottom').value = position.coords.latitude;
+        document.getElementById('longitudeBottom').value = position.coords.longitude;
+      }, function() {
+        alert("Unable to retrieve location.");
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+</script>
+
+</body>
+</html>
