@@ -11,7 +11,7 @@
     }
 
     body {
-      background: linear-gradient(135deg, #4A90E2, #9013FE);
+      background: linear-gradient(135deg, #448ee1, #9013FE);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -21,7 +21,7 @@
     }
 
     .container {
-      background: #ffffff;
+      background: linear-gradient(135deg, #448ee1, #9013FE);
       padding: 32px;
       border-radius: 12px;
       width: 100%;
@@ -88,7 +88,7 @@
     }
 
     .btn-geo {
-      background: #f0f4f8;
+      background: linear-gradient(135deg, #448ee1, #9013FE);
       border: 1px solid #cbd5e0;
       border-radius: 6px;
       padding: 0 14px;
@@ -98,12 +98,12 @@
     }
 
     .btn-geo:hover {
-      background: #e2e8f0;
+      background: linear-gradient(135deg, #448ee1, #9013FE);
     }
 
     .btn-submit {
       width: 100%;
-      background: linear-gradient(135deg, #4A90E2, #9013FE);
+      background: linear-gradient(135deg, #ba08f0, #9013FE);
       color: #ffffff;
       font-weight: bold;
       font-size: 16px;
@@ -118,6 +118,41 @@
     .btn-submit:hover {
       opacity: 0.92;
     }
+
+    body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(135deg, #267bdc, #9013FE);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background: #0070d2;
+  color: white;
+  padding: 2rem;
+}
+
+.button-container {
+  margin-top: 4rem;
+}
+
+button {
+  background: #0070d2;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #005bb5;
+}
+
   </style>
 </head>
 <body>
@@ -146,7 +181,7 @@
       <label for="email">Email</label>
       <input id="email" name="email" maxlength="80" type="text" placeholder="john.doe@example.com">
     </div>
-
+    
     <div class="form-group">
       <label for="phone">Phone</label>
       <input id="phone" name="phone" maxlength="40" type="text" placeholder="(123) 456-7890">
@@ -208,6 +243,13 @@
     </div>
 
     <input type="submit" name="submit" value="Submit Registration" class="btn-submit">
+    <div class="button-container">
+      <!-- Products button -->
+      <button onclick="openProducts()">Products</button>
+
+      <!-- Estimation button -->
+      <button onclick="openEstimation()">Estimation Cost</button>
+    </div>
   </form>
 </div>
 
@@ -224,6 +266,17 @@
       alert("Geolocation is not supported by this browser.");
     }
   }
+
+  function openProducts() {
+  // Redirect to your Products web-to-lead form or catalog
+  window.location.href = "https://yourdomain.com/products.html";
+}
+
+function openEstimation() {
+  // Redirect to the estimator website we built earlier
+  window.location.href = "estimator/estimator.html"; // replace with actual path
+}
+
 </script>
 
 </body>
