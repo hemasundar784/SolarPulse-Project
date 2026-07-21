@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolarPulse Products</title>
+    
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #448ee1, #9013FE); /* dark neutral background matching original style */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .company-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .company-name {
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .back-btn-container {
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 20px;
+    }
+
+    .btn-back {
+      background: #0070d2;
+      color: white;
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background: #005bb5;
+    }
+
+    /* Horizontal scrolling container for products */
+    .products-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+    }
+
+    .products-container {
+      display: flex;
+      gap: 20px;
+      padding: 5px;
+    }
+
+    .product-card {
+      background: linear-gradient(135deg, #448ee1, #9013FE);
+      border-radius: 12px;
+      min-width: 300px;
+      max-width: 300px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      background-color: #ffffff;
+    }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 12px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 8px;
+    }
+
+    .product-details {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .product-details p {
+      margin: 6px 0;
+    }
+
+    .company-footer {
+      text-align: center;
+      color: #94a3b8;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="company-header">
+    <img src="images\logo.png" alt="Company Logo" class="logo">
+    <h1 class="company-name">SolarPulse Energy - Product Catalog</h1>
+  </header>
+
+  <div class="back-btn-container">
+    <button class="btn-back" onclick="goBack()">← Back to Registration</button>
+  </div>
+
+  <div class="products-wrapper">
+    <div class="products-container">
+
+      <!-- 3KW System -->
+      <div class="product-card">
+        <div>
+          <img src="images\solarmodel1.webp" alt="SolarPulse Basic 3kW System" class="product-img">
+          <h3>BASIC 3KW SYSTEM</h3>
+          <div class="product-details">
+            <p><strong>Model:</strong> SP-BASIC-3K</p>
+            <p><strong>Capacity:</strong> 3 kW (8 Panels)</p>
+            <p><strong>System Cost:</strong> ₹2,62,500 <small>(inc. 5% GST)</small></p>
+            <p><strong>Generation:</strong> 350 kWh/mo | 4,200 kWh/yr</p>
+            <p><strong>Monthly Savings:</strong> ₹2,450</p>
+            <p><strong>Annual Savings:</strong> ₹29,400</p>
+            <p><strong>25-Year Savings:</strong> ₹7,35,000</p>
+            <p><strong>Payback Period:</strong> 8.9 years</p>
+            <p><strong>ROI (25 yrs):</strong> 280%</p>
+            <p><strong>Govt Subsidy:</strong> ₹90,000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5KW System -->
+      <div class="product-card">
+        <div>
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80" alt="SolarPulse Standard 5kW System" class="product-img">
+          <h3>STANDARD 5KW SYSTEM</h3>
+          <div class="product-details">
+            <p><strong>Model:</strong> SP-STD-5K</p>
+            <p><strong>Capacity:</strong> 5 kW (13 Panels)</p>
+            <p><strong>System Cost:</strong> ₹4,20,000 <small>(inc. 5% GST)</small></p>
+            <p><strong>Generation:</strong> 583 kWh/mo | 7,000 kWh/yr</p>
+            <p><strong>Monthly Savings:</strong> ₹4,081</p>
+            <p><strong>Annual Savings:</strong> ₹48,972</p>
+            <p><strong>25-Year Savings:</strong> ₹12,24,300</p>
+            <p><strong>Payback Period:</strong> 8.6 years</p>
+            <p><strong>ROI (25 yrs):</strong> 291%</p>
+            <p><strong>Govt Subsidy:</strong> ₹1,50,000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7KW System -->
+      <div class="product-card">
+        <div>
+          <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=600&q=80" alt="SolarPulse Pro 7kW System" class="product-img">
+          <h3>PRO 7KW SYSTEM</h3>
+          <div class="product-details">
+            <p><strong>Model:</strong> SP-PRO-7K</p>
+            <p><strong>Capacity:</strong> 7 kW (18 Panels)</p>
+            <p><strong>System Cost:</strong> ₹5,77,500 <small>(inc. 5% GST)</small></p>
+            <p><strong>Generation:</strong> 817 kWh/mo | 9,800 kWh/yr</p>
+            <p><strong>Monthly Savings:</strong> ₹5,719</p>
+            <p><strong>Annual Savings:</strong> ₹68,628</p>
+            <p><strong>25-Year Savings:</strong> ₹17,15,700</p>
+            <p><strong>Payback Period:</strong> 8.4 years</p>
+            <p><strong>ROI (25 yrs):</strong> 297%</p>
+            <p><strong>Govt Subsidy:</strong> ₹2,00,000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10KW System -->
+      <div class="product-card">
+        <div>
+          <img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=600&q=80" alt="SolarPulse Premium 10kW System" class="product-img">
+          <h3>PREMIUM 10KW SYSTEM</h3>
+          <div class="product-details">
+            <p><strong>Model:</strong> SP-PREM-10K</p>
+            <p><strong>Capacity:</strong> 10 kW (26 Panels)</p>
+            <p><strong>System Cost:</strong> ₹7,87,500 <small>(inc. 5% GST)</small></p>
+            <p><strong>Generation:</strong> 1,167 kWh/mo | 14,000 kWh/yr</p>
+            <p><strong>Monthly Savings:</strong> ₹8,169</p>
+            <p><strong>Annual Savings:</strong> ₹98,028</p>
+            <p><strong>25-Year Savings:</strong> ₹24,50,700</p>
+            <p><strong>Payback Period:</strong> 8.0 years</p>
+            <p><strong>ROI (25 yrs):</strong> 311%</p>
+            <p><strong>Govt Subsidy:</strong> ₹3,00,000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15KW System -->
+      <div class="product-card">
+        <div>
+          <img src="images\model3.webp" alt="SolarPulse Ultra 15kW System" class="product-img">
+          <h3>ULTRA 15KW SYSTEM</h3>
+          <div class="product-details">
+            <p><strong>Model:</strong> SP-ULTRA-15K</p>
+            <p><strong>Capacity:</strong> 15 kW (39 Panels)</p>
+            <p><strong>System Cost:</strong> ₹11,55,000 <small>(inc. 5% GST)</small></p>
+            <p><strong>Generation:</strong> 1,750 kWh/mo | 21,000 kWh/yr</p>
+            <p><strong>Monthly Savings:</strong> ₹12,250</p>
+            <p><strong>Annual Savings:</strong> ₹147,000</p>
+            <p><strong>25-Year Savings:</strong> ₹36,75,000</p>
+            <p><strong>Payback Period:</strong> 7.8 years</p>
+            <p><strong>ROI (25 yrs):</strong> 318%</p>
+            <p><strong>Govt Subsidy:</strong> ₹4,50,000</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="company-footer">
+    <h3>Service Network Highlights</h3>
+    <p>Active Regions: Telangana, Andhra Pradesh, Karnataka</p>
+    <p>Total Installed Capacity: Over 15+ MW across residential & commercial</p>
+    <p>Subsidy Assistance: Fully integrated central & state approvals</p>
+  </footer>
+
+<script>
+  function goBack() {
+    window.location.href = "index.html"; // Replace with your main registration file name if different
+  }
+</script>
+
+</body>
+</html>

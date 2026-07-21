@@ -12,7 +12,7 @@
     }
 
     body {
-      background: #0f172a; /* dark neutral background */
+      background: linear-gradient(135deg, #448ee1, #9013FE); /* gradient background */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -152,7 +152,7 @@
 </head>
 <body>
   <header class="company-header">
-    <img src="company-logo.png" alt="Company Logo" class="logo">
+    <img src="images/logo.png" alt="Company Logo" class="logo">
     <h1 class="company-name">SolarPulse Energy</h1>
   </header>
 
@@ -160,9 +160,8 @@
     <h2>Register</h2>
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dd200000CP1LP" method="POST">
       <input type="hidden" name="oid" value="00Dd200000CP1LP">
-      <input type="hidden" name="retURL" value="estimator.html">
+      <input type="hidden" name="retURL" value="https://hemasundar784.github.io/Solarpulse-website/">
       <input type="hidden" id="lead_source" name="lead_source" value="Web">
-
       <div class="grid-row">
         <div class="form-group">
           <label for="first_name">First Name</label>
@@ -186,7 +185,7 @@
 
       <div class="form-group">
         <label for="company">Company Name</label>
-        <input id="company" name="company" type="text" placeholder="SolarPulse Energy" required>
+        <input id="company" name="company" type="text" placeholder="SolarPulse Energy" value="Customer/Client"  required>
       </div>
 
       <div class="grid-row">
@@ -210,7 +209,7 @@
       </div>
 
       <div class="form-group">
-        <label for="street">Street</label>
+        <label for="street">Village</label>
         <textarea id="street" name="street"></textarea>
       </div>
 
@@ -219,7 +218,7 @@
         <textarea id="description" name="description"></textarea>
       </div>
 
-      <input type="submit" value="Submit Registration" class="btn-submit">
+      <input type="submit" id="submitBtn" value="Submit Registration" class="btn-submit">
 
       <div class="button-container">
         <button type="button" onclick="openProducts()">Products</button>
@@ -251,16 +250,20 @@
   }
 
   function openProducts() {
-    window.location.href = "products.html";
+    window.location.href = "products/SolarProducts.html";
   }
 
   function openCreateCase() {
-    window.location.href = "create-case.html";
+    window.location.href = "case/webtocase.html";
   }
 
   function openEstimation() {
-    window.location.href = "estimator.html";
+    window.location.href = "estimator/estimator.html";
   }
+
+  document.getElementById('submitBtn').addEventListener('click', function(event) {
+    alert("You are successfully registered! Our team will contact you soon.");
+  });
 </script>
 </body>
 </html>
