@@ -10,10 +10,10 @@ public with sharing class CustomerWorkspaceController {
         ];
     }
     @AuraEnabled(cacheable=true)
-    public static List<Candidate__c> getCandidates() {
+    public static List<Installation__c> getCandidates() {
         return [
-            SELECT Id, Name, skill__c, exp__c, status__c
-            FROM Candidate__c
+            SELECT Id, Name, Solar_Panel_Model__c, Region__c, Account__c,Panel_Count__c,Deadline_Date__c,Days_to_Deadline__c
+            FROM Installation__c
         ];
     }
 }

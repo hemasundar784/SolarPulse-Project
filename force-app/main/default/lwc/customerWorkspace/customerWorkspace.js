@@ -1,5 +1,4 @@
 import { LightningElement } from 'lwc';
-import { refreshApex } from '@salesforce/apex';
 
 export default class CustomerWorkspace extends LightningElement {
 
