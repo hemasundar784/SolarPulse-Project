@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolarPulse Energy</title>
+</head>
+<style>
+ .company-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.company-name {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.company-footer {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+<body>
+  <header class="company-header">
+    <img src="company-logo.png" alt="Company Logo" class="logo">
+    <h1 class="company-name">SolarPulse Energy</h1>
+  </header>
+
+  <div class="container">
+    <h2>Register</h2>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dd200000CP1LP" method="POST">
+      <!-- Hidden Salesforce Inputs -->
+      <input type="hidden" name="oid" value="00Dd200000CP1LP">
+      <input type="hidden" name="retURL" value="C:\Users\hemanth\OneDrive\Desktop\Salesforce\SolarPulse Project\SolarPulse\force-app\main\default\websites\estimator\estimator.html">
+      <input type="hidden" id="lead_source" name="lead_source" value="Web">
+
+      <!-- Form Fields -->
+      <div class="grid-row">
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input id="first_name" name="first_name" type="text" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input id="last_name" name="last_name" type="text" placeholder="Doe" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text" placeholder="john.doe@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="text" placeholder="(123) 456-7890">
+      </div>
+
+      <div class="form-group">
+        <label for="company">Company Name</label>
+        <input id="company" name="company" type="text" placeholder="SolarPulse Energy" required>
+      </div>
+
+      <div class="grid-row">
+        <div class="form-group">
+          <label for="city">City</label>
+          <input id="city" name="city" type="text">
+        </div>
+        <div class="form-group">
+          <label for="state">State/Province</label>
+          <input id="state" name="state" type="text">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Coordinates</label>
+        <div class="coord-wrapper">
+          <input id="latitudeBottom" name="0BCd2000000Suld" type="text" placeholder="Latitude">
+          <input id="longitudeBottom" name="0BCd2000000Sule" type="text" placeholder="Longitude">
+          <button type="button" class="btn-geo" onclick="getLocation()">📍</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="street">Street</label>
+        <textarea id="street" name="street"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description"></textarea>
+      </div>
+
+      <input type="submit" value="Submit Registration" class="btn-submit">
+
+      <div class="button-container">
+        <button onclick="openProducts()">Products</button>
+        <button onclick="openEstimation()">Estimation Cost</button>
+        <button type="button" onclick="openCreateCase()">Report an Issue (Case)</button>
+      </div>
+    </form>
+  </div>
+
+  <footer class="company-footer">
+    <h3>Service Network Highlights</h3>
+    <p>Active Regions: Telangana, Andhra Pradesh, Karnataka</p>
+    <p>Total Installed Capacity: Over 15+ MW across residential & commercial</p>
+    <p>Subsidy Assistance: Fully integrated central & state approvals</p>
+  </footer>
+</body>

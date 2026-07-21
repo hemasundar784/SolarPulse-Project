@@ -49,10 +49,10 @@ button:hover {
   background: #005bb5;
 }
 
-.hidden {
-  display: none;
-}
 
 #results {
   margin-top: 2rem;
+}
+.hidden {
+  display: none !important;
 }

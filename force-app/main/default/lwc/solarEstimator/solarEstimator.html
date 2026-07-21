@@ -1,0 +1,47 @@
+<template>
+  <header>
+    <h1>Solar Quotation Estimator</h1>
+  </header>
+
+  <main>
+    <!-- Form View -->
+    <form class="form-view">
+      <lightning-input type="number" label="Area (sq. feet)" value={area} onchange={handleAreaChange} required></lightning-input>
+      <lightning-combobox label="System Model" value={model} options={modelOptions} onchange={handleModelChange}></lightning-combobox>
+      <lightning-input type="text" label="Lead Phone No" value={phone} onchange={handlePhoneChange}></lightning-input>
+
+      <div class="button-group">
+        <lightning-button label="Estimate" variant="brand" onclick={calculate}></lightning-button>
+        <lightning-button label="Clear" variant="destructive" onclick={clearForm}></lightning-button>
+      </div>
+    </form>
+
+    <!-- Results View -->
+    <section if:true={showResults} class="results-view">
+      <h2>Estimation Results</h2>
+      <div class="results-content">
+        <p>System Cost: ₹{estimationData.cost}</p>
+        <p>Approx. Discount Eligible: ₹{approxDiscount}</p>
+        <p if:true={discountApplied}>Final Cost After Discount: ₹{finalCost}</p>
+      </div>
+
+      <!-- Email entry -->
+      <template if:true={showEmailInput}>
+        <lightning-input type="email" label="Enter Email Address" value={email} onchange={handleEmailChange}></lightning-input>
+        <lightning-button label="Confirm & Send" variant="success" onclick={sendEstimation}></lightning-button>
+      </template>
+
+      <div class="button-group">
+        <lightning-button label="Send Estimation by Email" variant="brand" onclick={showEmailField}></lightning-button>
+        <lightning-button label="Discount Calculator" variant="neutral" onclick={toggleDiscount}></lightning-button>
+        <lightning-button label="Download Slip (PDF)" variant="brand" onclick={downloadPDF}></lightning-button>
+      </div>
+
+      <!-- Discount input -->
+      <template if:true={showDiscountInput}>
+        <lightning-input type="number" label="Enter Discount Amount" value={enteredDiscount} onchange={handleDiscountChange}></lightning-input>
+        <lightning-button label="Apply Discount" variant="brand" onclick={applyDiscount}></lightning-button>
+      </template>
+    </section>
+  </main>
+</template>
