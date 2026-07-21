@@ -13,9 +13,12 @@ export default class CandidateListPanel extends LightningElement {
     /** Datatable columns */
     tableColumns = [
         { label: 'Name', fieldName: 'Name' },
-        { label: 'Skill', fieldName: 'skill__c' },
-        { label: 'Experience (Years)', fieldName: 'exp__c', type: 'number' },
-        { label: 'Status', fieldName: 'status__c' }
+        { label: 'Panel Model', fieldName: 'Solar_Panel_Model__c' },
+        { label: 'Region', fieldName: 'Region__c', type: 'text' },
+        { label: 'Account', fieldName: 'Account__c' },
+        { label: 'Panel Count', fieldName: 'Solar_Panel_Count__c', type: 'number' },
+        { label: 'deadline', fieldName: 'Deadline_Date__c', type: 'text' },
+        { label: 'Days to Deadline', fieldName: 'Days_to_Deadline__c' }
     ];
 
     /** Getter for UI condition */
