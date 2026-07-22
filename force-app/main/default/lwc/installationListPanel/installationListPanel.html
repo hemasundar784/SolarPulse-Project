@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Installations" icon-name="custom:custom63">
+        <!-- Show data -->
+        <template if:true={installations.data}>
+            <lightning-datatable
+                key-field="Id"
+                data={installations.data}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+
+        <!-- Show error -->
+        <template if:true={installations.error}>
+            <p class="slds-text-color_error">
+                {installations.error}
+            </p>
+        </template>
+    </lightning-card>
+</template>

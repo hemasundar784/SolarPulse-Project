@@ -15,12 +15,24 @@
   padding: 0;
 }
 
+
+.logo {
+  max-width: 120px;   /* keeps it small */
+  height: auto;       /* maintains aspect ratio */
+  display: block;     /* ensures it behaves like a block element */
+  margin: 0 auto 10px; /* centers it horizontally and adds spacing below */
+}
 header {
   background: #0070d2;
   background: linear-gradient(to right, #0943a8, #00bcd4);
   color: white;
   text-align: center;
   padding: 1rem 1rem;
+}
+
+.results-content {
+  text-align: center;
+  /* font-weight: bold; */
 }
 
 main {
@@ -82,6 +94,8 @@ const systemModels = {
     capacity: "3 kW",
     panels: 8,
     cost: 262500,
+    panelCost: 32750,   // cost per panel
+    panelArea: 65, 
     kwhMonth: 350,
     kwhYear: 4200,
     monthlySavings: 2450,
@@ -96,6 +110,8 @@ const systemModels = {
     capacity: "5 kW",
     panels: 13,
     cost: 420000,
+    panelCost: 32300,
+    panelArea: 65,
     kwhMonth: 583,
     kwhYear: 7000,
     monthlySavings: 4081,
@@ -110,6 +126,8 @@ const systemModels = {
     capacity: "7 kW",
     panels: 18,
     cost: 577500,
+    panelCost: 32670,
+    panelArea: 63,
     kwhMonth: 817,
     kwhYear: 9800,
     monthlySavings: 5719,
@@ -124,6 +142,8 @@ const systemModels = {
     capacity: "10 kW",
     panels: 26,
     cost: 787500,
+    panelCost: 39000,
+    panelArea: 65,
     kwhMonth: 1167,
     kwhYear: 14000,
     monthlySavings: 8169,
@@ -137,6 +157,8 @@ const systemModels = {
     name: "SolarPulse Ultra 15kW System",
     capacity: "15 kW",
     panels: 39,
+    panelCost: 39850,   // cost per panel
+    panelArea: 69, 
     cost: 1155000,
     kwhMonth: 1750,
     kwhYear: 21000,
@@ -161,18 +183,25 @@ function calculate() {
 
   const selectedModel = systemModels[modelKey];
 
-  // Display details on page
-  document.getElementById('systemModel').innerText = `Selected Model: ${selectedModel.name}`;
-  document.getElementById('capacity').innerText = `Capacity: ${selectedModel.capacity}`;
-  document.getElementById('panels').innerText = `Panel Count: ${selectedModel.panels} Panels`;
-  document.getElementById('cost').innerText = `System Cost: ₹${selectedModel.cost.toLocaleString('en-IN')} (incl. 5% GST)`;
-  document.getElementById('subsidy').innerText = `Govt. Subsidy Eligible: ₹${selectedModel.subsidy.toLocaleString('en-IN')}`;
-  document.getElementById('electricity').innerText = `Generation: ${selectedModel.kwhMonth} kWh/mo (${selectedModel.kwhYear} kWh/yr)`;
-  document.getElementById('monthly').innerText = `Est. Monthly Savings: ₹${selectedModel.monthlySavings.toLocaleString('en-IN')}`;
-  document.getElementById('yearly').innerText = `Est. Annual Savings: ₹${selectedModel.annualSavings.toLocaleString('en-IN')}`;
-  document.getElementById('longTerm').innerText = `25-Year Savings: ₹${selectedModel.savings25Yr.toLocaleString('en-IN')}`;
-  document.getElementById('payback').innerText = `Payback Period: ${selectedModel.payback}`;
-  document.getElementById('roi').innerText = `ROI (25 Years): ${selectedModel.roi}`;
+  // Panels required based on area
+  const panelsRequired = Math.floor(area / selectedModel.panelArea);
+
+  // Total cost based on panel count
+  const totalCost = panelsRequired * selectedModel.panelCost;
+
+  // Display details
+  document.getElementById('systemModel').innerHTML = `Selected Model: <strong>${selectedModel.name}</strong>`;
+  document.getElementById('capacity').innerHTML = `Capacity: <strong>${selectedModel.capacity}</strong>`;
+  document.getElementById('panels').innerHTML = `Panel Count: <strong>${panelsRequired} Panels</strong>`;
+  document.getElementById('onepanelcost').innerHTML = `One Panel Cost: <strong>₹${selectedModel.panelCost.toLocaleString('en-IN')}</strong>`;
+  document.getElementById('cost').innerHTML = `System Cost: <strong>₹${totalCost.toLocaleString('en-IN')} (incl. 5% GST)</strong>`;
+  document.getElementById('subsidy').innerHTML = `Govt. Subsidy Eligible: <strong>₹${selectedModel.subsidy.toLocaleString('en-IN')}</strong>`;
+  document.getElementById('electricity').innerHTML = `Generation: <strong>${selectedModel.kwhMonth} kWh/mo (${selectedModel.kwhYear} kWh/yr)</strong>`;
+  document.getElementById('monthly').innerHTML = `Est. Monthly Savings: <strong>₹${selectedModel.monthlySavings.toLocaleString('en-IN')}</strong>`;
+  document.getElementById('yearly').innerHTML = `Est. Annual Savings: <strong>₹${selectedModel.annualSavings.toLocaleString('en-IN')}</strong>`;
+  document.getElementById('longTerm').innerHTML = `25-Year Savings: <strong>₹${selectedModel.savings25Yr.toLocaleString('en-IN')}</strong>`;
+  document.getElementById('payback').innerHTML = `Payback Period: <strong>${selectedModel.payback}</strong>`;
+  document.getElementById('roi').innerHTML = `ROI (25 Years): <strong>${selectedModel.roi}</strong>`;
 
   // Toggle UI visibility
   document.getElementById('estimatorForm').classList.add('hidden');
@@ -182,9 +211,12 @@ function calculate() {
   window.estimationData = {
     ...selectedModel,
     area,
-    phone
+    phone,
+    panelsRequired,
+    cost: totalCost
   };
 }
+
 
 function goBack() {
   // Hide results and show form again
@@ -193,8 +225,8 @@ function goBack() {
   document.getElementById('estimatorForm').classList.remove('hidden');
 }
 //main button to go back to the main website
-function Back() {
-  window.location.href = "https://hemasundar784.github.io/Solarpulse-website"; // Replace with your target website URL
+function back() {
+  window.location.href = "../index.html"; // Replace with your target website URL
 }
 
 
@@ -209,12 +241,13 @@ function downloadPDF() {
   const doc = new jsPDF();
 
   const img = new Image();
-  img.src = "images\logo.png"; // Must be located in the same directory
+  img.src = "../images/logo.png"; // Must be located in the same directory
 
   const generatePDFContent = () => {
     doc.setFontSize(16);
     doc.text("Solar Quotation Estimation Slip", 70, 20);
-
+    doc.text(`System Capacity: ${data.capacity} (${data.panelsRequired} Panels)`, 20, 64);
+    doc.text(`Total Cost (incl. GST): ₹${data.cost.toLocaleString('en-IN')}`, 20, 72);
     doc.setFontSize(11);
     doc.text(`Lead Phone No: ${data.phone}`, 20, 40);
     doc.text(`Installation Area: ${data.area} sq. ft.`, 20, 48);
@@ -243,13 +276,14 @@ function downloadPDF() {
   };
 }
   </script>
-  <header>
-    <div class="company-header">
-    <img src="images/logo.png" alt="Company Logo" class="logo">
-    <h1 class="company-name">SolarPulse Energy</h1>
-</div>
-    <h1>Solar Quotation Estimator</h1>
-  </header>
+      <header>
+      <div class="company-header">
+        <img src="../images/logo.png" alt="Company Logo" class="logo">
+        <h1 class="company-name">SolarPulse Energy</h1>
+      </div>
+      <h1>Solar Quotation Estimator</h1>
+    </header>
+
 
   <main>
     <!-- Form View -->
@@ -270,25 +304,26 @@ function downloadPDF() {
       <input type="text" id="phone" placeholder="Enter phone number">
 
       <button type="button" onclick="calculate()">Estimate</button>
-      <button type="button" onclick="back()">back</button>
+      <button type="button" onclick="back()">back to registration</button>
     </form>
 
     <!-- Results View -->
     <section id="results" class="hidden">
-      <h2>Estimation Results</h2>
+      <h2 class="results-content">Estimation Results</h2>
       
-      <div id="resultsContent">
-        <p id="systemModel"></p>
-        <p id="capacity"></p>
-        <p id="panels"></p>
-        <p id="cost"></p>
-        <p id="subsidy"></p>
-        <p id="electricity"></p>
-        <p id="monthly"></p>
-        <p id="yearly"></p>
-        <p id="longTerm"></p>
-        <p id="payback"></p>
-        <p id="roi"></p>
+      <div id="resultsContent" class="results-content">
+        <p id="systemModel"><strong></strong></p>
+          <p id="capacity"><strong></strong></p>
+          <p id="panels"><strong></strong></p>
+          <p id="cost"><strong></strong></p>
+          <p id="subsidy"><strong></strong></p>
+          <p id="electricity"><strong></strong></p>
+          <p id="onepanelcost"><strong></strong></p>
+          <p id="monthly"><strong></strong></p>
+          <p id="yearly"><strong></strong></p>
+          <p id="longTerm"><strong></strong></p>
+          <p id="payback"><strong></strong></p>
+          <p id="roi"><strong></strong></p>
       </div>
 
       <div class="button-group">

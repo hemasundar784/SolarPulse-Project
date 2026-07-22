@@ -3,30 +3,38 @@
         <div class="slds-box slds-m-around_medium">
             <!-- Account Picker -->
             <div class="slds-p-around_medium">
-                <lightning-record-picker label="Select Account" object-api-name="Account"
-                    value={accountId} onchange={handleAccountChange}></lightning-record-picker>
+                <lightning-record-picker 
+                    label="Select Account" 
+                    object-api-name="Account"
+                    value={accountId} 
+                    onchange={handleAccountChange}>
+                </lightning-record-picker>
             </div>
+
             <!-- Parent → Child Section -->
             <lightning-layout multiple-rows class="slds-p-around_medium">
                 <lightning-layout-item size="12" class="slds-m-bottom_medium">
                     <div class="slds-box">
-                        <c-account-summary-panel 
-                            account-id={accountId}></c-account-summary-panel>
+                        <c-account-summary-panel account-id={accountId}></c-account-summary-panel>
                     </div>
                 </lightning-layout-item>
+
                 <lightning-layout-item size="6" padding="around-small">
                     <div class="slds-box">
-                        <c-contact-list-panel 
-                            account-id={accountId}></c-contact-list-panel>
+                        <c-contact-list-panel account-id={accountId}></c-contact-list-panel>
                     </div>
                 </lightning-layout-item>
+
                 <lightning-layout-item size="6" padding="around-small">
                     <div class="slds-box">
-                        <c-contact-creator-panel account-id={accountId}
-                            oncontactcreated={handleContactCreated}></c-contact-creator-panel>
+                        <c-contact-creator-panel 
+                            account-id={accountId}
+                            oncontactcreated={handleContactCreated}>
+                        </c-contact-creator-panel>
                     </div>
                 </lightning-layout-item>
             </lightning-layout>
+
             <!-- PubSub Section -->
             <lightning-layout multiple-rows class="slds-p-around_medium">
                 <lightning-layout-item size="6" padding="around-small">
@@ -34,9 +42,19 @@
                         <c-candidate-search-panel></c-candidate-search-panel>
                     </div>
                 </lightning-layout-item>
+
                 <lightning-layout-item size="6" padding="around-small">
                     <div class="slds-box">
                         <c-candidate-list-panel></c-candidate-list-panel>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <!-- Installation Section -->
+            <lightning-layout multiple-rows class="slds-p-around_medium">
+                <lightning-layout-item size="12" padding="around-small">
+                    <div class="slds-box">
+                        <c-installation-list-panel account-id={accountId}></c-installation-list-panel>
                     </div>
                 </lightning-layout-item>
             </lightning-layout>

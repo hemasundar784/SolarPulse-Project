@@ -18,19 +18,33 @@
 
     <!-- Results View -->
     <section if:true={showResults} class="results-view">
-      <h2>Estimation Results</h2>
-      <div class="results-content">
-        <p>System Cost: ₹{formattedCost}</p>
-        <p>Approx. Discount Eligible: ₹{formattedApproxDiscount}</p>
-        <p if:true={discountApplied}>Final Cost After Discount: ₹{formattedFinalCost}</p>
-        <p>Govt. Subsidy Eligible: ₹{formattedSubsidy}</p>
-        <p>Generation: {estimationData.kwhMonth} kWh/mo ({estimationData.kwhYear} kWh/yr)</p>
-        <p>Monthly Savings: ₹{formattedMonthlySavings}</p>
-        <p>Annual Savings: ₹{formattedAnnualSavings}</p>
-        <p>25-Year Savings: ₹{formattedSavings25Yr}</p>
-        <p>Payback Period: {estimationData.payback}</p>
-        <p>ROI (25 Years): {estimationData.roi}</p>
-      </div>
+  <h2 class="results-content">Estimation Results</h2>
+  <div class="results-content">
+  
+    <p>Total Cost: <strong>₹{formattedCost}</strong></p>
+    <p>Approx. Discount Eligible: <strong style="color: #ff0d00; font-weight: bold;">₹{formattedApproxDiscount}</strong></p>
+   
+    <p>Govt. Subsidy Eligible: <strong>₹{formattedSubsidy}</strong></p>
+    <p>Generation: <strong>{estimationData.kwhMonth} kWh/mo ({estimationData.kwhYear} kWh/yr)</strong></p>
+    <p>Monthly Savings: <strong>₹{formattedMonthlySavings}</strong></p>
+    <p>Panels Required: <strong>{estimationData.panelsRequired}</strong></p>
+    <p>One Panel Cost: <strong>₹{formattedPanelCost}</strong></p>
+
+    <p>Annual Savings: <strong>₹{formattedAnnualSavings}</strong></p>
+    <p>25-Year Savings: <strong>₹{formattedSavings25Yr}</strong></p>
+    <p>Payback Period: <strong>{estimationData.payback}</strong></p>
+    <p>ROI (25 Years): <strong>{estimationData.roi}</strong></p>
+     <p if:true={discountApplied} class="discount-text">
+      Final Cost After Discount: <strong>₹{formattedFinalCost}</strong>
+    </p>
+  </div>
+
+      
+       <!-- Discount input -->
+      <template if:true={showDiscountInput}>
+        <lightning-input type="number" label="Enter Discount Amount" value={enteredDiscount} onchange={handleDiscountChange}></lightning-input>
+        <lightning-button label="Apply Discount" variant="brand" onclick={applyDiscount}></lightning-button>
+      </template>
 
       <!-- Email entry -->
       <template if:true={showEmailInput}>
@@ -38,17 +52,12 @@
         <lightning-button label="Confirm & Send" variant="success" onclick={sendEstimation}></lightning-button>
       </template>
 
-      <div class="button-group">
-        <lightning-button label="Send Estimation by Email" variant="brand" onclick={showEmailField}></lightning-button>
+      <div class="button-group" style="align-items: center; justify-content: center; margin-top: 1rem;">
         <lightning-button label="Discount Calculator" variant="neutral" onclick={toggleDiscount}></lightning-button>
+        <lightning-button label="Send Estimation by Email" variant="brand" onclick={showEmailField}></lightning-button>
         <lightning-button label="Download Slip (PDF)" variant="brand" onclick={downloadPDF}></lightning-button>
       </div>
 
-      <!-- Discount input -->
-      <template if:true={showDiscountInput}>
-        <lightning-input type="number" label="Enter Discount Amount" value={enteredDiscount} onchange={handleDiscountChange}></lightning-input>
-        <lightning-button label="Apply Discount" variant="brand" onclick={applyDiscount}></lightning-button>
-      </template>
     </section>
   </main>
 </template>

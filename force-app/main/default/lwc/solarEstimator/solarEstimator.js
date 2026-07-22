@@ -6,6 +6,8 @@ const systemModels = {
         name: "SolarPulse Basic 3kW System",
         capacity: "3kW",
         cost: 262500,
+        panelCost: 32750,   // cost per panel
+        panelArea: 65,      // sq. ft. per panel
         kwhMonth: 350,
         kwhYear: 4200,
         monthlySavings: 2450,
@@ -20,6 +22,8 @@ const systemModels = {
         capacity: "5kW",
         cost: 420000,
         kwhMonth: 583,
+        panelCost: 32300,
+        panelArea: 65,
         kwhYear: 7000,
         monthlySavings: 4081,
         annualSavings: 48972,
@@ -33,6 +37,8 @@ const systemModels = {
         capacity: "7kW",
         cost: 577500,
         kwhMonth: 817,
+        panelCost: 32100,
+        panelArea: 65,
         kwhYear: 9800,
         monthlySavings: 5719,
         annualSavings: 68628,
@@ -46,6 +52,8 @@ const systemModels = {
         capacity: "10kW",
         cost: 787500,
         kwhMonth: 1167,
+        panelCost: 31500,
+        panelArea: 65,
         kwhYear: 14000,
         monthlySavings: 8169,
         annualSavings: 98028,
@@ -58,6 +66,8 @@ const systemModels = {
         name: "SolarPulse Ultra 15kW System",
         capacity: "15kW",
         cost: 1155000,
+        panelCost: 31000,
+        panelArea: 65,
         kwhMonth: 1750,
         kwhYear: 21000,
         monthlySavings: 12250,
@@ -97,16 +107,29 @@ export default class SolarEstimator extends LightningElement {
     handleEmailChange(e) { this.email = e.target.value; }
     handleDiscountChange(e) { this.enteredDiscount = parseFloat(e.target.value) || 0; }
 
-    calculate() {
+        calculate() {
         if (!this.model) {
             alert('Please select a system model.');
             return;
         }
         const selectedModel = systemModels[this.model];
-        this.estimationData = selectedModel;
-        this.approxDiscount = Math.round(selectedModel.cost * 0.10);
+
+        // Panels required based on area
+        const panelsRequired = Math.floor(this.area / selectedModel.panelArea);
+
+        // Total cost based on panel count
+        const totalCost = panelsRequired * selectedModel.panelCost;
+
+        this.estimationData = {
+            ...selectedModel,
+            panelsRequired,
+            cost: totalCost
+        };
+
+        this.approxDiscount = Math.round(totalCost * 0.10);
         this.showResults = true;
-    }
+        }
+
 
     clearForm() {
         this.area = '';
@@ -205,5 +228,8 @@ export default class SolarEstimator extends LightningElement {
     }
     get formattedSavings25Yr() {
         return this.estimationData.savings25Yr ? this.estimationData.savings25Yr.toLocaleString('en-IN') : '';
+    }
+    get formattedPanelCost() {
+        return this.estimationData.panelCost ? this.estimationData.panelCost.toLocaleString('en-IN') : '';
     }
 }

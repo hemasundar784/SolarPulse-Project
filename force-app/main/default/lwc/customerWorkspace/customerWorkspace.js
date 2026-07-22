@@ -7,8 +7,9 @@ export default class CustomerWorkspace extends LightningElement {
 
     /** Capture selected account */
     handleAccountChange(event) {
-        this.accountId = event.detail.recordId;
-    }
+    this.accountId = event.detail.recordId;
+    console.log('sp:: Selected AccountId:', this.accountId);
+}
 
     /** Child → Parent communication */
     async handleContactCreated() {
