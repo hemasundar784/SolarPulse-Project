@@ -1,0 +1,51 @@
+.invoice-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.invoice-header {
+    background: linear-gradient(90deg, #ff9800, #f57c00);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+}
+
+.logo {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.invoice-section {
+    margin-top: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.invoice-section h2 {
+    color: #1976d2;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.button-row {
+    margin-top: 20px;
+    text-align: center;
+}

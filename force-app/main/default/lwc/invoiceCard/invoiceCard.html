@@ -1,0 +1,49 @@
+<template>
+    <div class="invoice-container">
+        <!-- Header -->
+        <div class="invoice-header">
+            <img src="/resource/solarpulse_logo" alt="SolarPulse Logo" class="logo"/>
+            <h1>SolarPulse Invoice</h1>
+            <p class="subtitle">Empowering clean energy solutions</p>
+        </div>
+
+        <!-- Billing Details -->
+        <section class="invoice-section">
+            <h2>Billing Details</h2>
+            <div class="details-grid">
+                <p><b>Billing Number:</b> {billingNumber}</p>
+                <p><b>Installation ID:</b> {installationId}</p>
+                <p><b>Total Cost:</b> {totalCost}</p>
+                <p><b>Initial Paid:</b> {initialPaid}</p>
+                <p><b>Total Amount Paid:</b> {totalAmountPaid}</p>
+                <p><b>Remaining Balance:</b> {remainingBalance}</p>
+                <p><b>Payment Status:</b> {paymentStatus}</p>
+            </div>
+        </section>
+
+        <!-- Account Details -->
+        <section class="invoice-section">
+            <h2>Account Details</h2>
+            <div class="details-grid">
+                <p><b>Account:</b> {accountName}</p>
+                <p><b>Billing Address:</b> {billingAddress}</p>
+                <p><b>Phone Number:</b> {phoneNumber}</p>
+            </div>
+        </section>
+
+        <!-- Insurance Details -->
+        <section class="invoice-section">
+            <h2>Insurance Details</h2>
+            <div class="details-grid">
+                <p><b>Insurance Provider:</b> {insuranceProvider}</p>
+                <p><b>Insurance Amount:</b> {insuranceAmount}</p>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <div class="button-row">
+            <lightning-button label="Download PDF" onclick={handleDownloadPdf}></lightning-button>
+            <lightning-button label="Send Invoice via Email" onclick={handleSendEmail} class="slds-m-left_small"></lightning-button>
+        </div>
+    </div>
+</template>

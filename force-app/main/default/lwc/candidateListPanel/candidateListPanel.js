@@ -17,7 +17,7 @@ export default class CandidateListPanel extends LightningElement {
         { label: 'Region', fieldName: 'Region__c', type: 'text' },
         { label: 'Account', fieldName: 'Account__c' },
         { label: 'Status', fieldName: 'status__c' },
-        {label: 'Contract Value', fieldName: 'Contract_Value__c'},
+        { label: 'Contract Value', fieldName: 'Contract_Value__c', type: 'number'},
         { label: 'Panel Count', fieldName: 'Panel_Count__c', type: 'number' },
         { label: 'Days to Deadline', fieldName: 'Days_to_Deadline__c' }
     ];
